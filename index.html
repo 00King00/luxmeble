@@ -4,6 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LuxMeble - Преміальні шафи та кухні на замовлення</title>
+    <link rel="icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAB40lEQVR4Ae2WA6wdQRSGv9i2bdu2bdu2bdu2bdtmzle2kW7vpJvb3iY18k/yZXPO+eecnTuzFoJoIeQPbgJbAVdPfOUHKcAfmwtEAl2A44CR+cGbwCKgHZCt3QWKAyeAtUBS4rAqEC/2/YCSQA7tJZAYWAIcBeoStgIlgD3AfKAocAL4CRQA8usBQCKZjH3AYaCpfGZ9wEVgNjAYqAL8khfW04MAt4BvQKmw+jYCmyUU6Qj7x2g1gXdAT6CBcS5ZZL4qHHEloKMSyKDVBNYBfcJ6L+oAG4AdsRGYAoy1a0AuYBnQNbYDu4EJRlkSoQzaAouBOsAwjQYYVCQ2AtOArQrA2J+x0CyCiUAk4JnGAV4BTbKWbfWwJhvXAdNLDZzRKIB3mfP03U0X09O/Avmkb5I05SrgojGAG5JXXwaMU3C1zYGVwGpplgCOAT8kL7sB8NPiAzflyXoBXYGpwAxgjnSz24FYtAlwWhLREmAzUA+IlnbZEXgK7AQKAseB30Bh4KXQdkMd4Ik8OFoaBdO+/1L1sgK3gQXSiGSTZLUP+CCrYUjQV8UHycrEAzrITqc5YKTVRmQYkFp+0Efk/wSGLwRcgc8iw5bAFyCfPKS0/PgO4KQx4HNgEJBL4wCKUAx9AsW0f1b5f5eRAAAAAElFTkSuQmCC">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         :root {
             --primary-color: #111111;
@@ -97,7 +106,7 @@
         /* Hero Section */
         .hero {
             height: 100vh;
-            background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('/api/placeholder/1200/800');
+            background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1588854337221-4cf9fa96059c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&h=800&q=80');
             background-size: cover;
             background-position: center;
             display: flex;
@@ -561,6 +570,8 @@
             width: 50px;
             height: 2px;
             background-color: var(--accent-color);
+            left: 50%;
+            transform: translateX(-50%);
         }
         
         .footer-column p, .footer-column ul li {
@@ -585,6 +596,107 @@
             border-top: 1px solid rgba(255, 255, 255, 0.1);
             font-size: 14px;
             color: var(--text-secondary);
+        }
+        
+        /* Styles for "Чому саме ми?" section */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .feature-item {
+            background-color: var(--primary-color);
+            border-radius: 6px;
+            padding: 30px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            transition: var(--transition);
+        }
+
+        .feature-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 25px rgba(0, 0, 0, 0.3);
+        }
+
+        .feature-icon {
+            font-size: 40px;
+            color: var(--accent-color);
+            margin-bottom: 20px;
+        }
+
+        .feature-item h3 {
+            font-size: 22px;
+            margin-bottom: 15px;
+            color: var(--accent-color);
+        }
+
+        .feature-item p {
+            color: var(--text-secondary);
+            font-size: 16px;
+        }
+        
+        /* CSS для секції з лічильниками */
+        .counters {
+            background-color: var(--secondary-color);
+            padding: 80px 0;
+        }
+
+        .counters-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: 30px;
+        }
+
+        .counter-item {
+            text-align: center;
+            background-color: var(--primary-color);
+            padding: 30px;
+            border-radius: 6px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .counter-number {
+            font-size: 48px;
+            font-weight: 700;
+            color: var(--accent-color);
+            margin-bottom: 10px;
+        }
+
+        .counter-title {
+            font-size: 18px;
+            color: var(--text-color);
+        }
+        
+        /* CSS для секції "Наші партнери" */
+        .partners-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            gap: 40px;
+            margin-top: 40px;
+        }
+
+        .partner-item {
+            flex: 0 0 200px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            filter: grayscale(100%);
+            opacity: 0.7;
+            transition: var(--transition);
+        }
+
+        .partner-item:hover {
+            filter: grayscale(0);
+            opacity: 1;
+        }
+
+        .partner-item img {
+            max-width: 100%;
+            max-height: 80px;
         }
         
         /* Responsive Styles */
@@ -682,13 +794,67 @@
             </div>
             <div class="about-content">
                 <div class="about-image">
-                    <img src="/api/placeholder/600/400" alt="Наша майстерня">
+                    <img src="https://images.unsplash.com/photo-1581539250439-c96689b516dd?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&h=400&q=80" alt="Наша майстерня">
                 </div>
                 <div class="about-text">
                     <h3>Перетворюємо ваші мрії у реальність</h3>
                     <p>LuxMeble — це команда професіоналів з багаторічним досвідом виготовлення преміальних меблів на замовлення. Ми спеціалізуємося на створенні ексклюзивних кухонь та шаф, які поєднують у собі естетику, функціональність та довговічність.</p>
                     <p>Наша філософія проста — кожен проект має бути унікальним та відображати особистість замовника. Ми не просто виготовляємо меблі, ми створюємо простір, в якому вам буде комфортно та затишно.</p>
                     <p>Працюємо лише з найякіснішими матеріалами та фурнітурою від провідних європейських виробників, що гарантує довговічність та надійність наших меблів.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Секція "Чому саме ми" -->
+    <section class="section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Чому саме ми?</h2>
+                <p>Переваги співпраці з нашою компанією</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <i class="fas fa-award"></i>
+                    </div>
+                    <h3>Якість</h3>
+                    <p>Використовуємо лише сертифіковані матеріали та фурнітуру від провідних виробників.</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <i class="fas fa-drafting-compass"></i>
+                    </div>
+                    <h3>Індивідуальний підхід</h3>
+                    <p>Кожен проект розробляємо з урахуванням усіх побажань та особливостей приміщення.</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <i class="fas fa-tools"></i>
+                    </div>
+                    <h3>Сучасне обладнання</h3>
+                    <p>Наше виробництво оснащене найсучаснішим обладнанням європейських виробників.</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <i class="fas fa-calendar-check"></i>
+                    </div>
+                    <h3>Точні терміни</h3>
+                    <p>Дотримуємося заздалегідь узгоджених термінів виготовлення та встановлення меблів.</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Гарантія</h3>
+                    <p>Надаємо гарантію 5 років на всі види меблів та безкоштовне обслуговування.</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <i class="fas fa-tag"></i>
+                    </div>
+                    <h3>Конкурентні ціни</h3>
+                    <p>Пропонуємо найкраще співвідношення ціни та якості на ринку меблів.</p>
                 </div>
             </div>
         </div>
@@ -704,7 +870,7 @@
             <div class="services-grid">
                 <div class="service-card">
                     <div class="service-img">
-                        <img src="/api/placeholder/400/200" alt="Кухні на замовлення">
+                        <img src="https://images.prom.ua/3317393070_w640_h640_3317393070.jpg" alt="Кухні на замовлення">
                     </div>
                     <div class="service-content">
                         <h3>Кухні на замовлення</h3>
@@ -714,7 +880,7 @@
                 </div>
                 <div class="service-card">
                     <div class="service-img">
-                        <img src="/api/placeholder/400/200" alt="Шафи-купе">
+                        <img src="https://garant-nv.com/wp-content/uploads/2020/05/3400-scaled.jpg" alt="Шафи-купе">
                     </div>
                     <div class="service-content">
                         <h3>Шафи-купе</h3>
@@ -724,7 +890,7 @@
                 </div>
                 <div class="service-card">
                     <div class="service-img">
-                        <img src="/api/placeholder/400/200" alt="Гардеробні кімнати">
+                        <img src="https://s-kupe.com/images/garderob/garderob_80.jpg" alt="Гардеробні кімнати">
                     </div>
                     <div class="service-content">
                         <h3>Гардеробні кімнати</h3>
@@ -734,13 +900,37 @@
                 </div>
                 <div class="service-card">
                     <div class="service-img">
-                        <img src="/api/placeholder/400/200" alt="3D-проектування">
+                        <img src="https://kdm-kursi.com.ua/wp-content/uploads/photo_2023-06-23_10-56-10-1.jpg" alt="3D-проектування">
                     </div>
                     <div class="service-content">
                         <h3>3D-проектування</h3>
                         <p>Створюємо детальні 3D-візуалізації майбутніх меблів, щоб ви могли оцінити результат до початку виробництва.</p>
                         <a href="#contact" class="btn btn-outline">Замовити</a>
                     </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Секція з лічильниками -->
+    <section class="section counters">
+        <div class="container">
+            <div class="counters-grid">
+                <div class="counter-item">
+                    <div class="counter-number">15+</div>
+                    <div class="counter-title">Років досвіду</div>
+                </div>
+                <div class="counter-item">
+                    <div class="counter-number">1000+</div>
+                    <div class="counter-title">Виконаних проектів</div>
+                </div>
+                <div class="counter-item">
+                    <div class="counter-number">95%</div>
+                    <div class="counter-title">Задоволених клієнтів</div>
+                </div>
+                <div class="counter-item">
+                    <div class="counter-number">50+</div>
+                    <div class="counter-title">Професіоналів у команді</div>
                 </div>
             </div>
         </div>
@@ -762,7 +952,7 @@
             <div class="portfolio-grid">
                 <div class="portfolio-item" data-category="kitchens">
                     <div class="portfolio-img">
-                        <img src="/api/placeholder/400/300" alt="Сучасна кухня">
+                        <img src="https://images.unsplash.com/photo-1600489000022-c2086d79f9d4?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&h=300&q=80" alt="Сучасна кухня">
                     </div>
                     <div class="portfolio-overlay">
                         <h3>Сучасна кухня</h3>
@@ -772,7 +962,7 @@
                 </div>
                 <div class="portfolio-item" data-category="kitchens">
                     <div class="portfolio-img">
-                        <img src="/api/placeholder/400/300" alt="Класична кухня">
+                        <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&h=300&q=80" alt="Класична кухня">
                     </div>
                     <div class="portfolio-overlay">
                         <h3>Класична кухня</h3>
@@ -782,7 +972,7 @@
                 </div>
                 <div class="portfolio-item" data-category="wardrobes">
                     <div class="portfolio-img">
-                        <img src="/api/placeholder/400/300" alt="Шафа-купе для спальні">
+                        <img src="https://images.unsplash.com/photo-1595428774223-ef52624120d2?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&h=300&q=80" alt="Шафа-купе для спальні">
                     </div>
                     <div class="portfolio-overlay">
                         <h3>Шафа-купе для спальні</h3>
@@ -792,7 +982,7 @@
                 </div>
                 <div class="portfolio-item" data-category="wardrobes">
                     <div class="portfolio-img">
-                        <img src="/api/placeholder/400/300" alt="Вбудована шафа">
+                        <img src="https://garant-nv.com/wp-content/uploads/2020/05/3400-scaled.jpg" alt="Вбудована шафа">
                     </div>
                     <div class="portfolio-overlay">
                         <h3>Вбудована шафа</h3>
@@ -802,7 +992,7 @@
                 </div>
                 <div class="portfolio-item" data-category="cabinets">
                     <div class="portfolio-img">
-                        <img src="/api/placeholder/400/300" alt="Гардеробна кімната">
+                        <img src="https://s-kupe.com/images/garderob/garderob_80.jpg" alt="Гардеробна кімната">
                     </div>
                     <div class="portfolio-overlay">
                         <h3>Гардеробна кімната</h3>
@@ -812,7 +1002,7 @@
                 </div>
                 <div class="portfolio-item" data-category="kitchens">
                     <div class="portfolio-img">
-                        <img src="/api/placeholder/400/300" alt="Кухня з островом">
+                        <img src="https://images.unsplash.com/photo-1599327286062-40b0a7f2b305?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&h=300&q=80" alt="Кухня з островом">
                     </div>
                     <div class="portfolio-overlay">
                         <h3>Кухня з островом</h3>
@@ -839,11 +1029,43 @@
                     </div>
                     <div class="client-info">
                         <div class="client-img">
-                            <img src="/api/placeholder/60/60" alt="Олена Петренко">
+                            <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-1.2.1&auto=format&fit=crop&w=60&h=60&q=80" alt="Олена Петренко">
                         </div>
                         <div class="client-details">
                             <h4>Олена Петренко</h4>
                             <p>Київ</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-item" style="display: none;">
+                    <div class="client-rating">★★★★★</div>
+                    <div class="client-comment">
+                        <p>Замовляв меблі для спальні: шафу-купе та комод. Все виконано дуже якісно, встановили швидко та акуратно. Особливо хочу відзначити роботу дизайнера, який допоміг з вибором матеріалів та кольорів. Результат перевершив наші очікування!</p>
+                    </div>
+                    <div class="client-info">
+                        <div class="client-img">
+                            <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-1.2.1&auto=format&fit=crop&w=60&h=60&q=80" alt="Михайло Ковальчук">
+                        </div>
+                        <div class="client-details">
+                            <h4>Михайло Ковальчук</h4>
+                            <p>Львів</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-item" style="display: none;">
+                    <div class="client-rating">★★★★★</div>
+                    <div class="client-comment">
+                        <p>Вже втретє замовляємо меблі у LuxMeble. Цього разу це була кухня з островом. Якість матеріалів і роботи на висоті! Компанія дотримується термінів, завжди на зв'язку і готова допомогти з будь-яким питанням. Рекомендую!</p>
+                    </div>
+                    <div class="client-info">
+                        <div class="client-img">
+                            <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?ixlib=rb-1.2.1&auto=format&fit=crop&w=60&h=60&q=80" alt="Ірина Мельник">
+                        </div>
+                        <div class="client-details">
+                            <h4>Ірина Мельник</h4>
+                            <p>Одеса</p>
                         </div>
                     </div>
                 </div>
@@ -870,9 +1092,9 @@
                     </div>
                     <h3>Соціальні мережі</h3>
                     <div class="social-links">
-                        <a href="#"><i>f</i></a>
-                        <a href="#"><i>in</i></a>
-                        <a href="#"><i>ig</i></a>
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
                     </div>
                 </div>
                 <div class="contact-form">
@@ -900,6 +1122,46 @@
                         </div>
                         <button type="submit" class="btn">Надіслати</button>
                     </form>
+                </div>
+            </div>
+            <div class="contact-map">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2533.216787123093!2d22.2158874!3d50.0569758!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x473cee74492fb36d%3A0x94bed9643372d030!2sWandy%20Rutkiewicz%2096%2C%2037-100%20%C5%81a%C5%84cut%2C%20Poland!5e0!3m2!1sen!2spl!4v1711720000000!5m2!1sen!2spl" 
+                    width="100%"
+                    height="400"
+                    style="border-radius:6px;
+                    border: none;
+                    margin-top: 30px;
+                    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);"
+                    allowfullscreen=""
+                    loading="lazy">
+                </iframe>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Секція "Наші партнери" -->
+    <section class="section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Наші партнери</h2>
+                <p>Співпрацюємо з провідними виробниками меблевої фурнітури та матеріалів</p>
+            </div>
+            <div class="partners-grid">
+                <div class="partner-item">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Blum_logo.svg/320px-Blum_logo.svg.png" alt="Blum">
+                </div>
+                <div class="partner-item">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/Hettich-Logo.svg/320px-Hettich-Logo.svg.png" alt="Hettich">
+                </div>
+                <div class="partner-item">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Egger_logo.svg/320px-Egger_logo.svg.png" alt="Egger">
+                </div>
+                <div class="partner-item">
+                    <img src="https://seeklogo.com/images/K/kronospan-logo-EC53BC9B23-seeklogo.com.png" alt="Kronospan">
+                </div>
+                <div class="partner-item">
+                    <img src="https://seeklogo.com/images/H/hafele-logo-9DE31CF373-seeklogo.com.png" alt="Hafele">
                 </div>
             </div>
         </div>
@@ -970,6 +1232,30 @@
         const filterBtns = document.querySelectorAll('.filter-btn');
         const portfolioItems = document.querySelectorAll('.portfolio-item');
         
+        // Слайдер для відгуків
+        const testimonialItems = document.querySelectorAll('.testimonial-item');
+        let currentTestimonial = 0;
+
+        // Функція для показу поточного відгуку
+        function showTestimonial(index) {
+            testimonialItems.forEach((item, i) => {
+                if (i === index) {
+                    item.style.display = 'block';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        }
+
+        // Показуємо перший відгук при завантаженні
+        showTestimonial(currentTestimonial);
+
+        // Автоматична зміна відгуків кожні 5 секунд
+        setInterval(() => {
+            currentTestimonial = (currentTestimonial + 1) % testimonialItems.length;
+            showTestimonial(currentTestimonial);
+        }, 5000);
+        
         filterBtns.forEach(btn => {
             btn.addEventListener('click', () => {
                 // Remove active class from all buttons
@@ -993,4 +1279,4 @@
         });
     </script>
 </body>
-</html>
+</html>f
