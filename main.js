@@ -2,6 +2,11 @@
 document.querySelector('.mobile-menu-btn').addEventListener('click', function() {
     document.querySelector('nav ul').classList.toggle('active');
 });
+document.querySelectorAll('nav > ul > li').forEach(function(item) {
+    item.addEventListener('click', function() {
+      document.querySelector('nav ul').classList.toggle('active');
+    });
+  });
 
 // Header Scroll Effect
 window.addEventListener('scroll', function() {
