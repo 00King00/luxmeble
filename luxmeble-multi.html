@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="pl" data-lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LuxMeble - Meble premium na zamówienie</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    *, *:before, *:after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Montserrat', sans-serif; color: #333; line-height: 1.6; }
+    img { max-width: 100%; height: auto; }
+    a { text-decoration: none; color: #333; transition: 0.3s; }
+    
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+    
+    /* Header */
+    header { background: white; box-shadow: 0 2px 10px rgba(0,0,0,0.1); position: fixed; width: 100%; z-index: 1000; }
+    .header-content { display: flex; justify-content: space-between; align-items: center; padding: 15px 0; }
+    .logo { font-size: 24px; font-weight: 700; text-transform: uppercase; }
+    .logo span { color: #4CAF50; }
+    nav ul { display: flex; list-style: none; }
+    nav ul li { margin-left: 30px; }
+    nav ul li a:hover { color: #4CAF50; }
+    
+    .lang-switcher {
+      margin-left: 20px;
+    }
+    .lang-switcher select {
+      padding: 5px 10px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      font-family: 'Montserrat', sans-serif;
+    }
+    
+    /* Hero Section */
+    .hero { 
+      background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), 
+                  url('https://images.unsplash.com/photo-1523837157348-ffbdaccfc7de?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&h=600&q=80') no-repeat center center;
+      background-size: cover;
+      color: white;
+      padding: 180px 0 100px;
+      text-align: center;
+    }
+    .hero-content { max-width: 800px; margin: 0 auto; }
+    .hero h1 { font-size: 48px; margin-bottom: 20px; text-transform: uppercase; }
+    .hero p { font-size: 18px; margin-bottom: 30px; }
+    
+    .btn {
+      display: inline-block;
+      padding: 12px 30px;
+      background: #4CAF50;
+      color: white;
+      border: 2px solid #4CAF50;
+      border-radius: 30px;
+      font-weight: 600;
+      text-transform: uppercase;
+      margin: 0 10px;
+    }
+    .btn:hover { background: #3e8e41; }
+    .btn-outline { background: transparent; color: white; }
+    .btn-outline:hover { background: #4CAF50; }
+    
+    /* Section */
+    .section { padding: 80px 0; }
+    .section-title { text-align: center; margin-bottom: 60px; }
+    .section-title h2 { font-size: 36px; position: relative; padding-bottom: 15px; display: inline-block; }
+    .section-title h2:after {
+      content: '';
+      position: absolute;
+      width: 80px;
+      height: 3px;
+      background: #4CAF50;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+    .section-title p { font-size: 18px; color: #666; max-width: 700px; margin: 20px auto 0; }
+    
+    /* About Section */
+    .about-content { display: flex; gap: 40px; align-items: center; }
+    .about-image { flex: 1; border-radius: 10px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+    .about-text { flex: 1; }
+    .about-text h3 { font-size: 24px; margin-bottom: 20px; color: #4CAF50; }
+    
+    /* Contact */
+    .contact-info { max-width: 500px; margin: 0 auto; }
+    .contact-details p { margin-bottom: 15px; display: flex; align-items: center; }
+    .contact-details i { width: 30px; margin-right: 15px; color: #4CAF50; }
+    
+    /* Footer */
+    footer { background: #333; color: white; padding: 20px 0; text-align: center; }
+    
+    /* Media Queries */
+    @media (max-width: 991px) {
+      .about-content { flex-direction: column; }
+      .about-image, .about-text { width: 100%; }
+      .about-image { margin-bottom: 30px; }
+    }
+    
+    @media (max-width: 768px) {
+      .hero h1 { font-size: 36px; }
+      .mobile-menu-btn { display: block; font-size: 24px; cursor: pointer; }
+      nav ul { 
+        display: block; 
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: white;
+        box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        padding: 20px;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease;
+      }
+      nav ul.active { max-height: 300px; }
+      nav ul li { margin: 10px 0; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container header-content">
+      <a href="#" class="logo">Lux<span>Meble</span></a>
+      <div style="display: flex; align-items: center;">
+        <div class="lang-switcher">
+          <select id="language-select">
+            <option value="pl" selected>PL</option>
+            <option value="uk">UA</option>
+          </select>
+        </div>
+        <div class="mobile-menu-btn">☰</div>
+        <nav>
+          <ul>
+            <li><a href="#hero" data-i18n="nav_home">Główna</a></li>
+            <li><a href="#about" data-i18n="nav_about">O nas</a></li>
+            <li><a href="#contact" data-i18n="nav_contact">Kontakt</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </header>
+  
+  <section id="hero" class="hero">
+    <div class="container hero-content">
+      <h1 data-i18n="hero_title">Luksusowe meble dla Twojego domu</h1>
+      <p data-i18n="hero_subtitle">Tworzymy unikalne kuchnie i szafy na zamówienie, które idealnie pasują do Twojego wnętrza i spełniają Twoje potrzeby.</p>
+      <div>
+        <a href="#about" class="btn" data-i18n="btn_our_works">Nasze prace</a>
+        <a href="#contact" class="btn btn-outline" data-i18n="btn_contact">Kontakt</a>
+      </div>
+    </div>
+  </section>
+  
+  <section id="about" class="section">
+    <div class="container">
+      <div class="section-title">
+        <h2 data-i18n="about_title">O nas</h2>
+        <p data-i18n="about_subtitle">Od ponad 15 lat tworzymy meble premium z najlepszych materiałów</p>
+      </div>
+      <div class="about-content">
+        <div class="about-image">
+          <img src="https://images.unsplash.com/photo-1581539250439-c96689b516dd?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&h=400&q=80" alt="Nasza pracownia">
+        </div>
+        <div class="about-text">
+          <h3 data-i18n="about_heading">Zamieniamy Twoje marzenia w rzeczywistość</h3>
+          <p data-i18n="about_p1">LuxMeble to zespół profesjonalistów z wieloletnim doświadczeniem w produkcji mebli premium na zamówienie. Specjalizujemy się w tworzeniu ekskluzywnych kuchni i szaf, które łączą estetykę, funkcjonalność i trwałość.</p>
+          <p data-i18n="about_p2">Nasza filozofia jest prosta — każdy projekt powinien być unikalny i odzwierciedlać osobowość klienta. Nie tylko produkujemy meble, tworzymy przestrzeń, w której będziesz czuć się komfortowo i przytulnie.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <section id="contact" class="section">
+    <div class="container">
+      <div class="section-title">
+        <h2 data-i18n="contact_title">Skontaktuj się z nami</h2>
+        <p data-i18n="contact_subtitle">Gotowi omówić Twój projekt? Skontaktuj się z nami</p>
+      </div>
+      <div class="contact-info">
+        <div class="contact-details">
+          <p><i class="fas fa-map-marker-alt"></i> <span data-i18n="contact_address">ul. Wandy Rutkiewicz 96, 37-100 Łańcut</span></p>
+          <p><i class="fas fa-phone"></i> +48 531 853 007</p>
+          <p><i class="fas fa-envelope"></i> info@luxmeble.com</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 LuxMeble. <span data-i18n="footer_copyright">Wszelkie prawa zastrzeżone.</span></p>
+    </div>
+  </footer>
+
+  <script>
+    // Language Switcher Functionality
+    class LanguageSwitcher {
+      constructor(defaultLanguage = 'pl') {
+        const savedLanguage = localStorage.getItem('selectedLanguage');
+        this.currentLanguage = savedLanguage || defaultLanguage;
+        this.translations = {
+          'uk': {
+            "nav_home": "Головна",
+            "nav_about": "Про нас",
+            "nav_contact": "Контакти",
+            "hero_title": "Розкішні меблі для вашого дому",
+            "hero_subtitle": "Ми створюємо унікальні кухні та шафи на замовлення, які ідеально пасують до вашого інтер'єру та відповідають вашим потребам.",
+            "btn_our_works": "Наші роботи",
+            "btn_contact": "Зв'язатися",
+            "about_title": "Про нас",
+            "about_subtitle": "Більше 15 років ми створюємо преміальні меблі з найкращих матеріалів",
+            "about_heading": "Перетворюємо ваші мрії у реальність",
+            "about_p1": "LuxMeble — це команда професіоналів з багаторічним досвідом виготовлення преміальних меблів на замовлення. Ми спеціалізуємося на створенні ексклюзивних кухонь та шаф, які поєднують у собі естетику, функціональність та довговічність.",
+            "about_p2": "Наша філософія проста — кожен проект має бути унікальним та відображати особистість замовника. Ми не просто виготовляємо меблі, ми створюємо простір, в якому вам буде комфортно та затишно.",
+            "contact_title": "Зв'яжіться з нами",
+            "contact_subtitle": "Готові обговорити ваш проект? Зв'яжіться з нами",
+            "contact_address": "вул. Ванди Рудкивич 96, 37-100 Ланцют",
+            "footer_copyright": "Всі права захищені."
+          },
+          'pl': {
+            "nav_home": "Główna",
+            "nav_about": "O nas",
+            "nav_contact": "Kontakt",
+            "hero_title": "Luksusowe meble dla Twojego domu",
+            "hero_subtitle": "Tworzymy unikalne kuchnie i szafy na zamówienie, które idealnie pasują do Twojego wnętrza i spełniają Twoje potrzeby.",
+            "btn_our_works": "Nasze prace",
+            "btn_contact": "Kontakt",
+            "about_title": "O nas",
+            "about_subtitle": "Od ponad 15 lat tworzymy meble premium z najlepszych materiałów",
+            "about_heading": "Zamieniamy Twoje marzenia w rzeczywistość",
+            "about_p1": "LuxMeble to zespół profesjonalistów z wieloletnim doświadczeniem w produkcji mebli premium na zamówienie. Specjalizujemy się w tworzeniu ekskluzywnych kuchni i szaf, które łączą estetykę, funkcjonalność i trwałość.",
+            "about_p2": "Nasza filozofia jest prosta — każdy projekt powinien być unikalny i odzwierciedlać osobowość klienta. Nie tylko produkujemy meble, tworzymy przestrzeń, w której będziesz czuć się komfortowo i przytulnie.",
+            "contact_title": "Skontaktuj się z nami",
+            "contact_subtitle": "Gotowi omówić Twój projekt? Skontaktuj się z nami",
+            "contact_address": "ul. Wandy Rutkiewicz 96, 37-100 Łańcut",
+            "footer_copyright": "Wszelkie prawa zastrzeżone."
+          }
+        };
+        this.elements = document.querySelectorAll('[data-i18n]');
+        this.languageSelect = document.getElementById('language-select');
+        
+        // Initialize
+        this.init();
+      }
+      
+      init() {
+        // Set language attributes
+        document.documentElement.setAttribute('lang', this.currentLanguage);
+        document.documentElement.setAttribute('data-lang', this.currentLanguage);
+        
+        // Set language select value
+        if (this.languageSelect) {
+          this.languageSelect.value = this.currentLanguage;
+        }
+        
+        // Apply translations
+        this.updateContent();
+        
+        // Setup event listener for language selection
+        if (this.languageSelect) {
+          this.languageSelect.addEventListener('change', (e) => {
+            this.changeLanguage(e.target.value);
+            localStorage.setItem('selectedLanguage', e.target.value);
+          });
+        }
+      }
+      
+      changeLanguage(language) {
+        if (this.translations[language]) {
+          this.currentLanguage = language;
+          document.documentElement.setAttribute('lang', language);
+          document.documentElement.setAttribute('data-lang', language);
+          this.updateContent();
+        }
+      }
+      
+      updateContent() {
+        if (!this.translations[this.currentLanguage]) {
+          return;
+        }
+        
+        // Update elements with data-i18n attribute
+        this.elements = document.querySelectorAll('[data-i18n]');
+        this.elements.forEach(element => {
+          const key = element.getAttribute('data-i18n');
+          const translation = this.translations[this.currentLanguage][key];
+          
+          if (translation) {
+            element.textContent = translation;
+          }
+        });
+      }
+    }
+
+    // Initialize language switcher and other functionality
+    document.addEventListener('DOMContentLoaded', function() {
+      // Initialize language switcher
+      window.languageSwitcher = new LanguageSwitcher('pl');
+      
+      // Mobile menu toggle
+      const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+      if (mobileMenuBtn) {
+        mobileMenuBtn.addEventListener('click', function() {
+          document.querySelector('nav ul').classList.toggle('active');
+        });
+      }
+      
+      // Smooth scrolling for anchor links
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+          e.preventDefault();
+          
+          document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth'
+          });
+        });
+      });
+      
+      // Header scroll effect
+      window.addEventListener('scroll', function() {
+        if (window.scrollY > 50) {
+          document.querySelector('header').style.backgroundColor = 'rgba(255, 255, 255, 0.95)';
+          document.querySelector('header').style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.1)';
+        } else {
+          document.querySelector('header').style.backgroundColor = '#fff';
+          document.querySelector('header').style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.1)';
+        }
+      });
+    });
+  </script>
+</body>
+</html>
