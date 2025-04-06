@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="uk">
+<html lang="uk" data-lang="uk">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LuxMeble - Преміальні шафи та кухні на замовлення</title>
+    <title id="page-title">LuxMeble - Преміальні шафи та кухні на замовлення</title>
     <link rel="icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAB40lEQVR4Ae2WA6wdQRSGv9i2bdu2bdu2bdu2bdtmzle2kW7vpJvb3iY18k/yZXPO+eecnTuzFoJoIeQPbgJbAVdPfOUHKcAfmwtEAl2A44CR+cGbwCKgHZCt3QWKAyeAtUBS4rAqEC/2/YCSQA7tJZAYWAIcBeoStgIlgD3AfKAocAL4CRQA8usBQCKZjH3AYaCpfGZ9wEVgNjAYqAL8khfW04MAt4BvQKmw+jYCmyUU6Qj7x2g1gXdAT6CBcS5ZZL4qHHEloKMSyKDVBNYBfcJ6L+oAG4AdsRGYAoy1a0AuYBnQNbYDu4EJRlkSoQzaAouBOsAwjQYYVCQ2AtOArQrA2J+x0CyCiUAk4JnGAV4BTbKWbfWwJhvXAdNLDZzRKIB3mfP03U0X09O/Avmkb5I05SrgojGAG5JXXwaMU3C1zYGVwGpplgCOAT8kL7sB8NPiAzflyXoBXYGpwAxgjnSz24FYtAlwWhLREmAzUA+IlnbZEXgK7AQKAseB30Bh4KXQdkMd4Ik8OFoaBdO+/1L1sgK3gQXSiGSTZLUP+CCrYUjQV8UHycrEAzrITqc5YKTVRmQYkFp+0Efk/wSGLwRcgc8iw5bAFyCfPKS0/PgO4KQx4HNgEJBL4wCKUAx9AsW0f1b5f5eRAAAAAElFTkSuQmCC">
     
     <!-- Google Fonts -->
@@ -13,746 +13,9 @@
     
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <style>
-        :root {
-            --primary-color: #111111;
-            --secondary-color: #333333;
-            --accent-color: #d4af37;
-            --text-color: #ffffff;
-            --text-secondary: #cccccc;
-            --transition: all 0.3s ease;
-        }
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Montserrat', Arial, sans-serif;
-        }
-        
-        body {
-            background-color: var(--primary-color);
-            color: var(--text-color);
-            line-height: 1.6;
-        }
-        
-        a {
-            text-decoration: none;
-            color: var(--text-color);
-        }
-        
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-        
-        /* Header Styles */
-        header {
-            background-color: rgba(0, 0, 0, 0.8);
-            position: fixed;
-            width: 100%;
-            z-index: 1000;
-            padding: 20px 0;
-            transition: var(--transition);
-        }
-        
-        header.scrolled {
-            padding: 10px 0;
-            background-color: rgba(0, 0, 0, 0.95);
-        }
-        
-        .header-content {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        
-        .logo {
-            font-size: 28px;
-            font-weight: 700;
-            letter-spacing: 2px;
-        }
-        
-        .logo span {
-            color: var(--accent-color);
-        }
-        
-        nav ul {
-            display: flex;
-            list-style: none;
-        }
-        
-        nav ul li {
-            margin-left: 30px;
-        }
-        
-        nav ul li a {
-            font-size: 16px;
-            font-weight: 500;
-            transition: var(--transition);
-        }
-        
-        nav ul li a:hover {
-            color: var(--accent-color);
-        }
-        
-        .mobile-menu-btn {
-            display: none;
-            cursor: pointer;
-            font-size: 24px;
-        }
-        
-        /* Hero Section */
-        .hero {
-            height: 100vh;
-            background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1588854337221-4cf9fa96059c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&h=800&q=80');
-            background-size: cover;
-            background-position: center;
-            display: flex;
-            align-items: center;
-            text-align: center;
-        }
-        
-        .hero-content {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        
-        .hero h1 {
-            font-size: 48px;
-            margin-bottom: 20px;
-            font-weight: 700;
-        }
-        
-        .hero p {
-            font-size: 18px;
-            margin-bottom: 30px;
-            color: var(--text-secondary);
-        }
-        
-        .btn {
-            display: inline-block;
-            background-color: var(--accent-color);
-            color: var(--primary-color);
-            padding: 12px 30px;
-            border-radius: 4px;
-            font-weight: 600;
-            font-size: 16px;
-            transition: var(--transition);
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin: 0 10px;
-        }
-        
-        .btn:hover {
-            background-color: #c09c30;
-            transform: translateY(-3px);
-        }
-        
-        .btn-outline {
-            background-color: transparent;
-            border: 2px solid var(--accent-color);
-            color: var(--accent-color);
-        }
-        
-        .btn-outline:hover {
-            background-color: var(--accent-color);
-            color: var(--primary-color);
-        }
-        
-        /* About Section */
-        .section {
-            padding: 100px 0;
-        }
-        
-        .section-title {
-            text-align: center;
-            margin-bottom: 60px;
-        }
-        
-        .section-title h2 {
-            font-size: 36px;
-            margin-bottom: 20px;
-            position: relative;
-            display: inline-block;
-        }
-        
-        .section-title h2::after {
-            content: "";
-            position: absolute;
-            bottom: -10px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 80px;
-            height: 3px;
-            background-color: var(--accent-color);
-        }
-        
-        .section-title p {
-            color: var(--text-secondary);
-            max-width: 700px;
-            margin: 0 auto;
-        }
-        
-        .about-content {
-            display: flex;
-            align-items: center;
-            flex-wrap: wrap;
-        }
-        
-        .about-image {
-            flex: 1;
-            min-width: 300px;
-        }
-        
-        .about-image img {
-            width: 100%;
-            border-radius: 6px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-        }
-        
-        .about-text {
-            flex: 1;
-            padding: 30px;
-            min-width: 300px;
-        }
-        
-        .about-text h3 {
-            font-size: 28px;
-            margin-bottom: 20px;
-            color: var(--accent-color);
-        }
-        
-        .about-text p {
-            margin-bottom: 20px;
-        }
-        
-        /* Services Section */
-        .services {
-            background-color: var(--secondary-color);
-        }
-        
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 30px;
-        }
-        
-        .service-card {
-            background-color: var(--primary-color);
-            border-radius: 6px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-            transition: var(--transition);
-        }
-        
-        .service-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 25px rgba(0, 0, 0, 0.4);
-        }
-        
-        .service-img {
-            height: 200px;
-            overflow: hidden;
-        }
-        
-        .service-img img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: var(--transition);
-        }
-        
-        .service-card:hover .service-img img {
-            transform: scale(1.1);
-        }
-        
-        .service-content {
-            padding: 20px;
-        }
-        
-        .service-content h3 {
-            font-size: 22px;
-            margin-bottom: 15px;
-            color: var(--accent-color);
-        }
-        
-        .service-content p {
-            margin-bottom: 15px;
-            color: var(--text-secondary);
-        }
-        
-        /* Portfolio Section */
-        .portfolio-filter {
-            display: flex;
-            justify-content: center;
-            margin-bottom: 40px;
-            flex-wrap: wrap;
-        }
-        
-        .filter-btn {
-            padding: 8px 20px;
-            margin: 5px;
-            background-color: transparent;
-            border: 1px solid var(--accent-color);
-            color: var(--text-color);
-            border-radius: 4px;
-            cursor: pointer;
-            transition: var(--transition);
-        }
-        
-        .filter-btn.active, .filter-btn:hover {
-            background-color: var(--accent-color);
-            color: var(--primary-color);
-        }
-        
-        .portfolio-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 20px;
-        }
-        
-        .portfolio-item {
-            position: relative;
-            overflow: hidden;
-            border-radius: 6px;
-            height: 300px;
-        }
-        
-        .portfolio-img {
-            width: 100%;
-            height: 100%;
-        }
-        
-        .portfolio-img img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: var(--transition);
-        }
-        
-        .portfolio-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.8);
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            padding: 20px;
-            opacity: 0;
-            transition: var(--transition);
-        }
-        
-        .portfolio-item:hover .portfolio-overlay {
-            opacity: 1;
-        }
-        
-        .portfolio-item:hover .portfolio-img img {
-            transform: scale(1.1);
-        }
-        
-        .portfolio-overlay h3 {
-            font-size: 22px;
-            margin-bottom: 10px;
-            color: var(--accent-color);
-        }
-        
-        .portfolio-overlay p {
-            text-align: center;
-            margin-bottom: 15px;
-        }
-        
-        /* Testimonials Section */
-        .testimonials {
-            background-color: var(--secondary-color);
-        }
-        
-        .testimonials-slider {
-            max-width: 700px;
-            margin: 0 auto;
-        }
-        
-        .testimonial-item {
-            text-align: center;
-            padding: 40px;
-            background-color: var(--primary-color);
-            border-radius: 6px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-        }
-        
-        .client-rating {
-            color: var(--accent-color);
-            font-size: 24px;
-            margin-bottom: 20px;
-        }
-        
-        .client-comment {
-            font-style: italic;
-            margin-bottom: 20px;
-            position: relative;
-        }
-        
-        .client-comment::before, .client-comment::after {
-            content: '"';
-            font-size: 60px;
-            color: var(--accent-color);
-            opacity: 0.3;
-            position: absolute;
-        }
-        
-        .client-comment::before {
-            top: -20px;
-            left: -15px;
-        }
-        
-        .client-comment::after {
-            bottom: -40px;
-            right: -15px;
-        }
-        
-        .client-info {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin-top: 20px;
-        }
-        
-        .client-img {
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            overflow: hidden;
-            margin-right: 15px;
-            border: 3px solid var(--accent-color);
-        }
-        
-        .client-img img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-        
-        .client-details h4 {
-            font-size: 18px;
-            margin-bottom: 5px;
-        }
-        
-        .client-details p {
-            color: var(--accent-color);
-            font-size: 14px;
-        }
-        
-        /* Contact Section */
-        .contact-content {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 40px;
-        }
-        
-        .contact-info {
-            flex: 1;
-            min-width: 300px;
-        }
-        
-        .contact-form {
-            flex: 1;
-            min-width: 300px;
-        }
-        
-        .contact-info h3 {
-            font-size: 24px;
-            margin-bottom: 20px;
-            color: var(--accent-color);
-        }
-        
-        .contact-details {
-            margin-bottom: 30px;
-        }
-        
-        .contact-details p {
-            margin-bottom: 15px;
-            display: flex;
-            align-items: flex-start;
-        }
-        
-        .contact-details i {
-            margin-right: 15px;
-            color: var(--accent-color);
-            font-size: 20px;
-            min-width: 20px;
-        }
-        
-        .social-links {
-            display: flex;
-            gap: 15px;
-        }
-        
-        .social-links a {
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            background-color: var(--secondary-color);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            transition: var(--transition);
-        }
-        
-        .social-links a:hover {
-            background-color: var(--accent-color);
-            color: var(--primary-color);
-        }
-        
-        .form-group {
-            margin-bottom: 20px;
-        }
-        
-        .form-control {
-            width: 100%;
-            padding: 12px;
-            border-radius: 4px;
-            border: 1px solid var(--secondary-color);
-            background-color: rgba(255, 255, 255, 0.1);
-            color: var(--text-color);
-            font-size: 16px;
-            transition: var(--transition);
-        }
-        
-        .form-control:focus {
-            outline: none;
-            border-color: var(--accent-color);
-            background-color: rgba(255, 255, 255, 0.2);
-        }
-        
-        textarea.form-control {
-            min-height: 150px;
-            resize: vertical;
-        }
-        
-        /* Footer */
-        footer {
-            background-color: #000;
-            padding: 50px 0 20px;
-            text-align: center;
-        }
-        
-        .footer-content {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-            margin-bottom: 30px;
-        }
-        
-        .footer-column {
-            flex: 1;
-            min-width: 200px;
-            padding: 0 15px;
-            margin-bottom: 30px;
-        }
-        
-        .footer-column h3 {
-            font-size: 20px;
-            margin-bottom: 20px;
-            position: relative;
-            padding-bottom: 10px;
-        }
-        
-        .footer-column h3::after {
-            content: "";
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 50px;
-            height: 2px;
-            background-color: var(--accent-color);
-            left: 50%;
-            transform: translateX(-50%);
-        }
-        
-        .footer-column p, .footer-column ul li {
-            margin-bottom: 10px;
-        }
-        
-        .footer-column ul {
-            list-style: none;
-        }
-        
-        .footer-column ul li a {
-            transition: var(--transition);
-        }
-        
-        .footer-column ul li a:hover {
-            color: var(--accent-color);
-            padding-left: 5px;
-        }
-        
-        .copyright {
-            padding-top: 20px;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            font-size: 14px;
-            color: var(--text-secondary);
-        }
-        
-        /* Styles for "Чому саме ми?" section */
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 30px;
-            margin-top: 40px;
-        }
+    <link rel="stylesheet" href="./styles.css">
 
-        .feature-item {
-            background-color: var(--primary-color);
-            border-radius: 6px;
-            padding: 30px;
-            text-align: center;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-            transition: var(--transition);
-        }
 
-        .feature-item:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 25px rgba(0, 0, 0, 0.3);
-        }
-
-        .feature-icon {
-            font-size: 40px;
-            color: var(--accent-color);
-            margin-bottom: 20px;
-        }
-
-        .feature-item h3 {
-            font-size: 22px;
-            margin-bottom: 15px;
-            color: var(--accent-color);
-        }
-
-        .feature-item p {
-            color: var(--text-secondary);
-            font-size: 16px;
-        }
-        
-        /* CSS для секції з лічильниками */
-        .counters {
-            background-color: var(--secondary-color);
-            padding: 80px 0;
-        }
-
-        .counters-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-            gap: 30px;
-        }
-
-        .counter-item {
-            text-align: center;
-            background-color: var(--primary-color);
-            padding: 30px;
-            border-radius: 6px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-        }
-
-        .counter-number {
-            font-size: 48px;
-            font-weight: 700;
-            color: var(--accent-color);
-            margin-bottom: 10px;
-        }
-
-        .counter-title {
-            font-size: 18px;
-            color: var(--text-color);
-        }
-        
-        /* CSS для секції "Наші партнери" */
-        .partners-grid {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            align-items: center;
-            gap: 40px;
-            margin-top: 40px;
-        }
-
-        .partner-item {
-            flex: 0 0 200px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            filter: grayscale(100%);
-            opacity: 0.7;
-            transition: var(--transition);
-        }
-
-        .partner-item:hover {
-            filter: grayscale(0);
-            opacity: 1;
-        }
-
-        .partner-item img {
-            max-width: 100%;
-            max-height: 80px;
-        }
-        
-        /* Responsive Styles */
-        @media screen and (max-width: 768px) {
-            .mobile-menu-btn {
-                display: block;
-            }
-            
-            nav ul {
-                position: fixed;
-                top: 70px;
-                left: -100%;
-                width: 100%;
-                height: calc(100vh - 70px);
-                background-color: var(--primary-color);
-                flex-direction: column;
-                justify-content: flex-start;
-                align-items: center;
-                padding-top: 50px;
-                transition: var(--transition);
-                z-index: 999;
-            }
-            
-            nav ul.active {
-                left: 0;
-            }
-            
-            nav ul li {
-                margin: 15px 0;
-            }
-            
-            .hero h1 {
-                font-size: 36px;
-            }
-            
-            .hero p {
-                font-size: 16px;
-            }
-            
-            .section {
-                padding: 70px 0;
-            }
-            
-            .section-title h2 {
-                font-size: 28px;
-            }
-            
-            .about-text, .about-image {
-                padding: 15px;
-            }
-            
-            .testimonial-item {
-                padding: 20px;
-            }
-        }
-    </style>
 </head>
 <body>
     <!-- Header -->
@@ -760,14 +23,20 @@
         <div class="container header-content">
             <a href="#" class="logo">Lux<span>Meble</span></a>
             <div class="mobile-menu-btn">☰</div>
+            <div class="lang-switcher">
+                <select id="language-select">
+                    <option value="uk">UA</option>
+                    <option value="pl">PL</option>
+                </select>
+            </div>
             <nav>
                 <ul>
-                    <li><a href="#hero">Головна</a></li>
-                    <li><a href="#about">Про нас</a></li>
-                    <li><a href="#services">Послуги</a></li>
-                    <li><a href="#portfolio">Портфоліо</a></li>
-                    <li><a href="#testimonials">Відгуки</a></li>
-                    <li><a href="#contact">Контакти</a></li>
+                    <li><a href="#hero" data-i18n="nav_home">Головна</a></li>
+                    <li><a href="#about" data-i18n="nav_about">Про нас</a></li>
+                    <li><a href="#services" data-i18n="nav_services">Послуги</a></li>
+                    <li><a href="#portfolio" data-i18n="nav_portfolio">Портфоліо</a></li>
+                    <li><a href="#testimonials" data-i18n="nav_testimonials">Відгуки</a></li>
+                    <li><a href="#contact" data-i18n="nav_contact">Контакти</a></li>
                 </ul>
             </nav>
         </div>
@@ -776,11 +45,11 @@
     <!-- Hero Section -->
     <section id="hero" class="hero">
         <div class="container hero-content">
-            <h1>Розкішні меблі для вашого дому</h1>
-            <p>Ми створюємо унікальні кухні та шафи на замовлення, які ідеально пасують до вашого інтер'єру та відповідають вашим потребам.</p>
+            <h1 data-i18n="hero_title">Розкішні меблі для вашого дому</h1>
+            <p data-i18n="hero_subtitle">Ми створюємо унікальні кухні та шафи на замовлення, які ідеально пасують до вашого інтер'єру та відповідають вашим потребам.</p>
             <div class="hero-buttons">
-                <a href="#portfolio" class="btn">Наші роботи</a>
-                <a href="#contact" class="btn btn-outline">Зв'язатися</a>
+                <a href="#portfolio" class="btn" data-i18n="btn_our_works">Наші роботи</a>
+                <a href="#contact" class="btn btn-outline" data-i18n="btn_contact">Зв'язатися</a>
             </div>
         </div>
     </section>
@@ -789,18 +58,18 @@
     <section id="about" class="section">
         <div class="container">
             <div class="section-title">
-                <h2>Про нас</h2>
-                <p>Більше 15 років ми створюємо преміальні меблі з найкращих матеріалів</p>
+                <h2 data-i18n="about_title">Про нас</h2>
+                <p data-i18n="about_subtitle">Більше 15 років ми створюємо преміальні меблі з найкращих матеріалів</p>
             </div>
             <div class="about-content">
                 <div class="about-image">
                     <img src="https://images.unsplash.com/photo-1581539250439-c96689b516dd?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&h=400&q=80" alt="Наша майстерня">
                 </div>
                 <div class="about-text">
-                    <h3>Перетворюємо ваші мрії у реальність</h3>
-                    <p>LuxMeble — це команда професіоналів з багаторічним досвідом виготовлення преміальних меблів на замовлення. Ми спеціалізуємося на створенні ексклюзивних кухонь та шаф, які поєднують у собі естетику, функціональність та довговічність.</p>
-                    <p>Наша філософія проста — кожен проект має бути унікальним та відображати особистість замовника. Ми не просто виготовляємо меблі, ми створюємо простір, в якому вам буде комфортно та затишно.</p>
-                    <p>Працюємо лише з найякіснішими матеріалами та фурнітурою від провідних європейських виробників, що гарантує довговічність та надійність наших меблів.</p>
+                    <h3 data-i18n="about_heading">Перетворюємо ваші мрії у реальність</h3>
+                    <p data-i18n="about_p1">LuxMeble — це команда професіоналів з багаторічним досвідом виготовлення преміальних меблів на замовлення. Ми спеціалізуємося на створенні ексклюзивних кухонь та шаф, які поєднують у собі естетику, функціональність та довговічність.</p>
+                    <p data-i18n="about_p2">Наша філософія проста — кожен проект має бути унікальним та відображати особистість замовника. Ми не просто виготовляємо меблі, ми створюємо простір, в якому вам буде комфортно та затишно.</p>
+                    <p data-i18n="about_p3">Працюємо лише з найякіснішими матеріалами та фурнітурою від провідних європейських виробників, що гарантує довговічність та надійність наших меблів.</p>
                 </div>
             </div>
         </div>
@@ -810,51 +79,51 @@
     <section class="section">
         <div class="container">
             <div class="section-title">
-                <h2>Чому саме ми?</h2>
-                <p>Переваги співпраці з нашою компанією</p>
+                <h2 data-i18n="why_us_title">Чому саме ми?</h2>
+                <p data-i18n="why_us_subtitle">Переваги співпраці з нашою компанією</p>
             </div>
             <div class="features-grid">
                 <div class="feature-item">
                     <div class="feature-icon">
                         <i class="fas fa-award"></i>
                     </div>
-                    <h3>Якість</h3>
-                    <p>Використовуємо лише сертифіковані матеріали та фурнітуру від провідних виробників.</p>
+                    <h3 data-i18n="feature1_title">Якість</h3>
+                    <p data-i18n="feature1_text">Використовуємо лише сертифіковані матеріали та фурнітуру від провідних виробників.</p>
                 </div>
                 <div class="feature-item">
                     <div class="feature-icon">
                         <i class="fas fa-drafting-compass"></i>
                     </div>
-                    <h3>Індивідуальний підхід</h3>
-                    <p>Кожен проект розробляємо з урахуванням усіх побажань та особливостей приміщення.</p>
+                    <h3 data-i18n="feature2_title">Індивідуальний підхід</h3>
+                    <p data-i18n="feature2_text">Кожен проект розробляємо з урахуванням усіх побажань та особливостей приміщення.</p>
                 </div>
                 <div class="feature-item">
                     <div class="feature-icon">
                         <i class="fas fa-tools"></i>
                     </div>
-                    <h3>Сучасне обладнання</h3>
-                    <p>Наше виробництво оснащене найсучаснішим обладнанням європейських виробників.</p>
+                    <h3 data-i18n="feature3_title">Сучасне обладнання</h3>
+                    <p data-i18n="feature3_text">Наше виробництво оснащене найсучаснішим обладнанням європейських виробників.</p>
                 </div>
                 <div class="feature-item">
                     <div class="feature-icon">
                         <i class="fas fa-calendar-check"></i>
                     </div>
-                    <h3>Точні терміни</h3>
-                    <p>Дотримуємося заздалегідь узгоджених термінів виготовлення та встановлення меблів.</p>
+                    <h3 data-i18n="feature4_title">Точні терміни</h3>
+                    <p data-i18n="feature4_text">Дотримуємося заздалегідь узгоджених термінів виготовлення та встановлення меблів.</p>
                 </div>
                 <div class="feature-item">
                     <div class="feature-icon">
                         <i class="fas fa-shield-alt"></i>
                     </div>
-                    <h3>Гарантія</h3>
-                    <p>Надаємо гарантію 5 років на всі види меблів та безкоштовне обслуговування.</p>
+                    <h3 data-i18n="feature5_title">Гарантія</h3>
+                    <p data-i18n="feature5_text">Надаємо гарантію 5 років на всі види меблів та безкоштовне обслуговування.</p>
                 </div>
                 <div class="feature-item">
                     <div class="feature-icon">
                         <i class="fas fa-tag"></i>
                     </div>
-                    <h3>Конкурентні ціни</h3>
-                    <p>Пропонуємо найкраще співвідношення ціни та якості на ринку меблів.</p>
+                    <h3 data-i18n="feature6_title">Конкурентні ціни</h3>
+                    <p data-i18n="feature6_text">Пропонуємо найкраще співвідношення ціни та якості на ринку меблів.</p>
                 </div>
             </div>
         </div>
@@ -864,8 +133,8 @@
     <section id="services" class="section services">
         <div class="container">
             <div class="section-title">
-                <h2>Наші послуги</h2>
-                <p>Ми пропонуємо повний цикл створення меблів — від дизайну до встановлення</p>
+                <h2 data-i18n="services_title">Наші послуги</h2>
+                <p data-i18n="services_subtitle">Ми пропонуємо повний цикл створення меблів — від дизайну до встановлення</p>
             </div>
             <div class="services-grid">
                 <div class="service-card">
@@ -873,9 +142,9 @@
                         <img src="https://images.prom.ua/3317393070_w640_h640_3317393070.jpg" alt="Кухні на замовлення">
                     </div>
                     <div class="service-content">
-                        <h3>Кухні на замовлення</h3>
-                        <p>Створюємо кухні, які поєднують в собі стиль, функціональність та ергономіку. Індивідуальний підхід до кожного проекту.</p>
-                        <a href="#contact" class="btn btn-outline">Замовити</a>
+                        <h3 data-i18n="service1_title">Кухні на замовлення</h3>
+                        <p data-i18n="service1_text">Створюємо кухні, які поєднують в собі стиль, функціональність та ергономіку. Індивідуальний підхід до кожного проекту.</p>
+                        <a href="#contact" class="btn btn-outline" data-i18n="btn_order">Замовити</a>
                     </div>
                 </div>
                 <div class="service-card">
@@ -883,9 +152,9 @@
                         <img src="https://garant-nv.com/wp-content/uploads/2020/05/3400-scaled.jpg" alt="Шафи-купе">
                     </div>
                     <div class="service-content">
-                        <h3>Шафи-купе</h3>
-                        <p>Функціональні та стильні шафи-купе за індивідуальними розмірами. Максимально використовуємо наявний простір.</p>
-                        <a href="#contact" class="btn btn-outline">Замовити</a>
+                        <h3 data-i18n="service2_title">Шафи-купе</h3>
+                        <p data-i18n="service2_text">Функціональні та стильні шафи-купе за індивідуальними розмірами. Максимально використовуємо наявний простір.</p>
+                        <a href="#contact" class="btn btn-outline" data-i18n="btn_order">Замовити</a>
                     </div>
                 </div>
                 <div class="service-card">
@@ -893,9 +162,9 @@
                         <img src="https://s-kupe.com/images/garderob/garderob_80.jpg" alt="Гардеробні кімнати">
                     </div>
                     <div class="service-content">
-                        <h3>Гардеробні кімнати</h3>
-                        <p>Проектуємо та виготовляємо зручні гардеробні системи з оптимальним розподілом внутрішнього простору.</p>
-                        <a href="#contact" class="btn btn-outline">Замовити</a>
+                        <h3 data-i18n="service3_title">Гардеробні кімнати</h3>
+                        <p data-i18n="service3_text">Проектуємо та виготовляємо зручні гардеробні системи з оптимальним розподілом внутрішнього простору.</p>
+                        <a href="#contact" class="btn btn-outline" data-i18n="btn_order">Замовити</a>
                     </div>
                 </div>
                 <div class="service-card">
@@ -903,9 +172,9 @@
                         <img src="https://kdm-kursi.com.ua/wp-content/uploads/photo_2023-06-23_10-56-10-1.jpg" alt="3D-проектування">
                     </div>
                     <div class="service-content">
-                        <h3>3D-проектування</h3>
-                        <p>Створюємо детальні 3D-візуалізації майбутніх меблів, щоб ви могли оцінити результат до початку виробництва.</p>
-                        <a href="#contact" class="btn btn-outline">Замовити</a>
+                        <h3 data-i18n="service4_title">3D-проектування</h3>
+                        <p data-i18n="service4_text">Створюємо детальні 3D-візуалізації майбутніх меблів, щоб ви могли оцінити результат до початку виробництва.</p>
+                        <a href="#contact" class="btn btn-outline" data-i18n="btn_order">Замовити</a>
                     </div>
                 </div>
             </div>
@@ -917,20 +186,20 @@
         <div class="container">
             <div class="counters-grid">
                 <div class="counter-item">
-                    <div class="counter-number">15+</div>
-                    <div class="counter-title">Років досвіду</div>
+                    <div class="counter-number" data-i18n="counter1_value">15+</div>
+                    <div class="counter-title" data-i18n="counter1_title">Років досвіду</div>
                 </div>
                 <div class="counter-item">
-                    <div class="counter-number">1000+</div>
-                    <div class="counter-title">Виконаних проектів</div>
+                    <div class="counter-number" data-i18n="counter2_value">1000+</div>
+                    <div class="counter-title" data-i18n="counter2_title">Виконаних проектів</div>
                 </div>
                 <div class="counter-item">
-                    <div class="counter-number">95%</div>
-                    <div class="counter-title">Задоволених клієнтів</div>
+                    <div class="counter-number" data-i18n="counter3_value">95%</div>
+                    <div class="counter-title" data-i18n="counter3_title">Задоволених клієнтів</div>
                 </div>
                 <div class="counter-item">
-                    <div class="counter-number">50+</div>
-                    <div class="counter-title">Професіоналів у команді</div>
+                    <div class="counter-number" data-i18n="counter4_value">50+</div>
+                    <div class="counter-title" data-i18n="counter4_title">Професіоналів у команді</div>
                 </div>
             </div>
         </div>
@@ -940,14 +209,14 @@
     <section id="portfolio" class="section">
         <div class="container">
             <div class="section-title">
-                <h2>Наші роботи</h2>
-                <p>Перегляньте наші останні проекти, щоб оцінити якість та стиль наших меблів</p>
+                <h2 data-i18n="portfolio_title">Наші роботи</h2>
+                <p data-i18n="portfolio_subtitle">Перегляньте наші останні проекти, щоб оцінити якість та стиль наших меблів</p>
             </div>
             <div class="portfolio-filter">
-                <button class="filter-btn active" data-filter="all">Всі проекти</button>
-                <button class="filter-btn" data-filter="kitchens">Кухні</button>
-                <button class="filter-btn" data-filter="wardrobes">Шафи</button>
-                <button class="filter-btn" data-filter="cabinets">Гардеробні</button>
+                <button class="filter-btn active" data-filter="all" data-i18n="filter_all">Всі проекти</button>
+                <button class="filter-btn" data-filter="kitchens" data-i18n="filter_kitchens">Кухні</button>
+                <button class="filter-btn" data-filter="wardrobes" data-i18n="filter_wardrobes">Шафи</button>
+                <button class="filter-btn" data-filter="cabinets" data-i18n="filter_cabinets">Гардеробні</button>
             </div>
             <div class="portfolio-grid">
                 <div class="portfolio-item" data-category="kitchens">
@@ -955,9 +224,9 @@
                         <img src="https://images.unsplash.com/photo-1600489000022-c2086d79f9d4?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&h=300&q=80" alt="Сучасна кухня">
                     </div>
                     <div class="portfolio-overlay">
-                        <h3>Сучасна кухня</h3>
-                        <p>Мінімалістична кухня з фасадами без ручок та інтегрованою технікою.</p>
-                        <a href="#" class="btn btn-outline">Деталі</a>
+                        <h3 data-i18n="portfolio1_title">Сучасна кухня</h3>
+                        <p data-i18n="portfolio1_text">Мінімалістична кухня з фасадами без ручок та інтегрованою технікою.</p>
+                        <a href="#" class="btn btn-outline" data-i18n="btn_details">Деталі</a>
                     </div>
                 </div>
                 <div class="portfolio-item" data-category="kitchens">
@@ -965,9 +234,9 @@
                         <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&h=300&q=80" alt="Класична кухня">
                     </div>
                     <div class="portfolio-overlay">
-                        <h3>Класична кухня</h3>
-                        <p>Елегантна кухня в класичному стилі з фасадами з натурального дерева.</p>
-                        <a href="#" class="btn btn-outline">Деталі</a>
+                        <h3 data-i18n="portfolio2_title">Класична кухня</h3>
+                        <p data-i18n="portfolio2_text">Елегантна кухня в класичному стилі з фасадами з натурального дерева.</p>
+                        <a href="#" class="btn btn-outline" data-i18n="btn_details">Деталі</a>
                     </div>
                 </div>
                 <div class="portfolio-item" data-category="wardrobes">
@@ -975,9 +244,9 @@
                         <img src="https://images.unsplash.com/photo-1595428774223-ef52624120d2?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&h=300&q=80" alt="Шафа-купе для спальні">
                     </div>
                     <div class="portfolio-overlay">
-                        <h3>Шафа-купе для спальні</h3>
-                        <p>Просторий гардероб з дзеркальними дверима та функціональним наповненням.</p>
-                        <a href="#" class="btn btn-outline">Деталі</a>
+                        <h3 data-i18n="portfolio3_title">Шафа-купе для спальні</h3>
+                        <p data-i18n="portfolio3_text">Просторий гардероб з дзеркальними дверима та функціональним наповненням.</p>
+                        <a href="#" class="btn btn-outline" data-i18n="btn_details">Деталі</a>
                     </div>
                 </div>
                 <div class="portfolio-item" data-category="wardrobes">
@@ -985,9 +254,9 @@
                         <img src="https://garant-nv.com/wp-content/uploads/2020/05/3400-scaled.jpg" alt="Вбудована шафа">
                     </div>
                     <div class="portfolio-overlay">
-                        <h3>Вбудована шафа</h3>
-                        <p>Компактна шафа з оптимальним використанням простору в ніші.</p>
-                        <a href="#" class="btn btn-outline">Деталі</a>
+                        <h3 data-i18n="portfolio4_title">Вбудована шафа</h3>
+                        <p data-i18n="portfolio4_text">Компактна шафа з оптимальним використанням простору в ніші.</p>
+                        <a href="#" class="btn btn-outline" data-i18n="btn_details">Деталі</a>
                     </div>
                 </div>
                 <div class="portfolio-item" data-category="cabinets">
@@ -995,9 +264,9 @@
                         <img src="https://s-kupe.com/images/garderob/garderob_80.jpg" alt="Гардеробна кімната">
                     </div>
                     <div class="portfolio-overlay">
-                        <h3>Гардеробна кімната</h3>
-                        <p>Просторий гардероб з відкритими полицями та зоною для аксесуарів.</p>
-                        <a href="#" class="btn btn-outline">Деталі</a>
+                        <h3 data-i18n="portfolio5_title">Гардеробна кімната</h3>
+                        <p data-i18n="portfolio5_text">Просторий гардероб з відкритими полицями та зоною для аксесуарів.</p>
+                        <a href="#" class="btn btn-outline" data-i18n="btn_details">Деталі</a>
                     </div>
                 </div>
                 <div class="portfolio-item" data-category="kitchens">
@@ -1005,9 +274,9 @@
                         <img src="https://images.unsplash.com/photo-1599327286062-40b0a7f2b305?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&h=300&q=80" alt="Кухня з островом">
                     </div>
                     <div class="portfolio-overlay">
-                        <h3>Кухня з островом</h3>
-                        <p>Простора кухня з функціональним островом та барною стійкою.</p>
-                        <a href="#" class="btn btn-outline">Деталі</a>
+                        <h3 data-i18n="portfolio6_title">Кухня з островом</h3>
+                        <p data-i18n="portfolio6_text">Простора кухня з функціональним островом та барною стійкою.</p>
+                        <a href="#" class="btn btn-outline" data-i18n="btn_details">Деталі</a>
                     </div>
                 </div>
             </div>
@@ -1018,22 +287,22 @@
     <section id="testimonials" class="section testimonials">
         <div class="container">
             <div class="section-title">
-                <h2>Відгуки наших клієнтів</h2>
-                <p>Думка наших клієнтів — найкраще підтвердження якості нашої роботи</p>
+                <h2 data-i18n="testimonials_title">Відгуки наших клієнтів</h2>
+                <p data-i18n="testimonials_subtitle">Думка наших клієнтів — найкраще підтвердження якості нашої роботи</p>
             </div>
             <div class="testimonials-slider">
                 <div class="testimonial-item">
                     <div class="client-rating">★★★★★</div>
                     <div class="client-comment">
-                        <p>Замовляли кухню в LuxMeble і дуже задоволені результатом. Команда професіоналів від початку до кінця супроводжувала нас в процесі. Дизайнер врахував всі наші побажання, а встановлення пройшло швидко та чисто. Рекомендую всім, хто шукає якісні меблі!</p>
+                        <p data-i18n="testimonial1_text">Замовляли кухню в LuxMeble і дуже задоволені результатом. Команда професіоналів від початку до кінця супроводжувала нас в процесі. Дизайнер врахував всі наші побажання, а встановлення пройшло швидко та чисто. Рекомендую всім, хто шукає якісні меблі!</p>
                     </div>
                     <div class="client-info">
                         <div class="client-img">
                             <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-1.2.1&auto=format&fit=crop&w=60&h=60&q=80" alt="Олена Петренко">
                         </div>
                         <div class="client-details">
-                            <h4>Олена Петренко</h4>
-                            <p>Київ</p>
+                            <h4 data-i18n="testimonial1_name">Олена Петренко</h4>
+                            <p data-i18n="testimonial1_city">Київ</p>
                         </div>
                     </div>
                 </div>
@@ -1041,15 +310,15 @@
                 <div class="testimonial-item" style="display: none;">
                     <div class="client-rating">★★★★★</div>
                     <div class="client-comment">
-                        <p>Замовляв меблі для спальні: шафу-купе та комод. Все виконано дуже якісно, встановили швидко та акуратно. Особливо хочу відзначити роботу дизайнера, який допоміг з вибором матеріалів та кольорів. Результат перевершив наші очікування!</p>
+                        <p data-i18n="testimonial2_text">Замовляв меблі для спальні: шафу-купе та комод. Все виконано дуже якісно, встановили швидко та акуратно. Особливо хочу відзначити роботу дизайнера, який допоміг з вибором матеріалів та кольорів. Результат перевершив наші очікування!</p>
                     </div>
                     <div class="client-info">
                         <div class="client-img">
                             <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-1.2.1&auto=format&fit=crop&w=60&h=60&q=80" alt="Михайло Ковальчук">
                         </div>
                         <div class="client-details">
-                            <h4>Михайло Ковальчук</h4>
-                            <p>Львів</p>
+                            <h4 data-i18n="testimonial2_name">Михайло Ковальчук</h4>
+                            <p data-i18n="testimonial2_city">Львів</p>
                         </div>
                     </div>
                 </div>
@@ -1057,15 +326,15 @@
                 <div class="testimonial-item" style="display: none;">
                     <div class="client-rating">★★★★★</div>
                     <div class="client-comment">
-                        <p>Вже втретє замовляємо меблі у LuxMeble. Цього разу це була кухня з островом. Якість матеріалів і роботи на висоті! Компанія дотримується термінів, завжди на зв'язку і готова допомогти з будь-яким питанням. Рекомендую!</p>
+                        <p data-i18n="testimonial3_text">Вже втретє замовляємо меблі у LuxMeble. Цього разу це була кухня з островом. Якість матеріалів і ��оботи на висоті! Компанія дотримується термінів, завжди на зв'язку і готова допомогти з будь-яким питанням. Рекомендую!</p>
                     </div>
                     <div class="client-info">
                         <div class="client-img">
                             <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?ixlib=rb-1.2.1&auto=format&fit=crop&w=60&h=60&q=80" alt="Ірина Мельник">
                         </div>
                         <div class="client-details">
-                            <h4>Ірина Мельник</h4>
-                            <p>Одеса</p>
+                            <h4 data-i18n="testimonial3_name">Ірина Мельник</h4>
+                            <p data-i18n="testimonial3_city">Одеса</p>
                         </div>
                     </div>
                 </div>
@@ -1077,20 +346,20 @@
     <section id="contact" class="section">
         <div class="container">
             <div class="section-title">
-                <h2>Зв'яжіться з нами</h2>
-                <p>Готові обговорити ваш проект? Заповніть форму нижче або зв'яжіться з нами за контактами</p>
+                <h2 data-i18n="contact_title">Зв'яжіться з нами</h2>
+                <p data-i18n="contact_subtitle">Готові обговорити ваш проект? Заповніть форму нижче або зв'яжіться з нами за контактами</p>
             </div>
             <div class="contact-content">
                 <div class="contact-info">
-                    <h3>Наші контакти</h3>
+                    <h3 data-i18n="contact_heading">Наші контакти</h3>
                     <div class="contact-details">
-                        <p><i>📍</i> вул. Меблева, 45, м. Київ, 01001</p>
+                        <p><i>📍</i> <span data-i18n="contact_address">вул. Меблева, 45, м. Київ, 01001</span></p>
                         <p><i>📞</i> +380 44 123 45 67</p>
                         <p><i>📱</i> +380 67 987 65 43</p>
                         <p><i>✉️</i> info@luxmeble.com</p>
-                        <p><i>🕒</i> Пн-Пт: 9:00-18:00, Сб: 10:00-15:00</p>
+                        <p><i>🕒</i> <span data-i18n="contact_hours">Пн-Пт: 9:00-18:00, Сб: 10:00-15:00</span></p>
                     </div>
-                    <h3>Соціальні мережі</h3>
+                    <h3 data-i18n="social_heading">Соціальні мережі</h3>
                     <div class="social-links">
                         <a href="#"><i class="fab fa-facebook-f"></i></a>
                         <a href="#"><i class="fab fa-linkedin-in"></i></a>
@@ -1100,27 +369,27 @@
                 <div class="contact-form">
                     <form action="#" method="POST">
                         <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Ваше ім'я" required>
+                            <input type="text" class="form-control" placeholder="Ваше ім'я" data-i18n-placeholder="form_name" required>
                         </div>
                         <div class="form-group">
-                            <input type="email" class="form-control" placeholder="Ваш email" required>
+                            <input type="email" class="form-control" placeholder="Ваш email" data-i18n-placeholder="form_email" required>
                         </div>
                         <div class="form-group">
-                            <input type="tel" class="form-control" placeholder="Ваш телефон" required>
+                            <input type="tel" class="form-control" placeholder="Ваш телефон" data-i18n-placeholder="form_phone" required>
                         </div>
                         <div class="form-group">
                             <select class="form-control" required>
-                                <option value="" disabled selected>Оберіть послугу</option>
-                                <option value="kitchen">Кухні</option>
-                                <option value="wardrobe">Шафи-купе</option>
-                                <option value="cabinet">Гардеробні</option>
-                                <option value="other">Інше</option>
+                                <option value="" disabled selected data-i18n="form_service">Оберіть послугу</option>
+                                <option value="kitchen" data-i18n="form_kitchens">Кухні</option>
+                                <option value="wardrobe" data-i18n="form_wardrobes">Шафи-купе</option>
+                                <option value="cabinet" data-i18n="form_cabinets">Гардеробні</option>
+                                <option value="other" data-i18n="form_other">Інше</option>
                             </select>
                         </div>
                         <div class="form-group">
-                            <textarea class="form-control" placeholder="Ваше повідомлення" required></textarea>
+                            <textarea class="form-control" placeholder="Ваше повідомлення" data-i18n-placeholder="form_message" required></textarea>
                         </div>
-                        <button type="submit" class="btn">Надіслати</button>
+                        <button type="submit" class="btn" data-i18n="btn_send">Надіслати</button>
                     </form>
                 </div>
             </div>
@@ -1144,8 +413,8 @@
     <section class="section">
         <div class="container">
             <div class="section-title">
-                <h2>Наші партнери</h2>
-                <p>Співпрацюємо з провідними виробниками меблевої фурнітури та матеріалів</p>
+                <h2 data-i18n="partners_title">Наші партнери</h2>
+                <p data-i18n="partners_subtitle">Співпрацюємо з провідними виробниками меблевої фурнітури та матеріалів</p>
             </div>
             <div class="partners-grid">
                 <div class="partner-item">
@@ -1172,111 +441,48 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-column">
-                    <h3>Про LuxMeble</h3>
-                    <p>Виготовлення преміальних меблів на замовлення з 2008 року. Наша спеціалізація — кухні та шафи найвищої якості.</p>
+                    <h3 data-i18n="footer_about">Про LuxMeble</h3>
+                    <p data-i18n="footer_about_text">Виготовлення преміальних меблів на замовлення з 2008 року. Наша спеціалізація — кухні та шафи найвищої якості.</p>
                 </div>
                 <div class="footer-column">
-                    <h3>Швидкі посилання</h3>
+                    <h3 data-i18n="footer_links">Швидкі посилання</h3>
                     <ul>
-                        <li><a href="#hero">Головна</a></li>
-                        <li><a href="#about">Про нас</a></li>
-                        <li><a href="#services">Послуги</a></li>
-                        <li><a href="#portfolio">Портфоліо</a></li>
-                        <li><a href="#testimonials">Відгуки</a></li>
-                        <li><a href="#contact">Контакти</a></li>
+                        <li><a href="#hero" data-i18n="nav_home">Головна</a></li>
+                        <li><a href="#about" data-i18n="nav_about">Про нас</a></li>
+                        <li><a href="#services" data-i18n="nav_services">Послуги</a></li>
+                        <li><a href="#portfolio" data-i18n="nav_portfolio">Портфоліо</a></li>
+                        <li><a href="#testimonials" data-i18n="nav_testimonials">Відгуки</a></li>
+                        <li><a href="#contact" data-i18n="nav_contact">Контакти</a></li>
                     </ul>
                 </div>
                 <div class="footer-column">
-                    <h3>Каталог</h3>
+                    <h3 data-i18n="footer_catalog">Каталог</h3>
                     <ul>
-                        <li><a href="#">Кухні</a></li>
-                        <li><a href="#">Шафи-купе</a></li>
-                        <li><a href="#">Гардеробні</a></li>
-                        <li><a href="#">Вітальні</a></li>
-                        <li><a href="#">Спальні</a></li>
+                        <li><a href="#" data-i18n="footer_catalog_item1">Кухні</a></li>
+                        <li><a href="#" data-i18n="footer_catalog_item2">Шафи-купе</a></li>
+                        <li><a href="#" data-i18n="footer_catalog_item3">Гардеробні</a></li>
+                        <li><a href="#" data-i18n="footer_catalog_item4">Вітальні</a></li>
+                        <li><a href="#" data-i18n="footer_catalog_item5">Спальні</a></li>
                     </ul>
                 </div>
                 <div class="footer-column">
-                    <h3>Правова інформація</h3>
+                    <h3 data-i18n="footer_legal">Правова інформація</h3>
                     <ul>
-                        <li><a href="#">Умови використання</a></li>
-                        <li><a href="#">Політика конфіденційності</a></li>
-                        <li><a href="#">Доставка та оплата</a></li>
-                        <li><a href="#">Гарантія</a></li>
+                        <li><a href="#" data-i18n="footer_legal_item1">Умови використання</a></li>
+                        <li><a href="#" data-i18n="footer_legal_item2">Політика конфіденційності</a></li>
+                        <li><a href="#" data-i18n="footer_legal_item3">Доставка та оплата</a></li>
+                        <li><a href="#" data-i18n="footer_legal_item4">Гарантія</a></li>
                     </ul>
                 </div>
             </div>
             <div class="copyright">
-                &copy; 2025 LuxMeble. Всі права захищені.
+                &copy; 2025 LuxMeble. <span data-i18n="footer_copyright">Всі права захищені.</span>
             </div>
         </div>
     </footer>
     
     <!-- JavaScript -->
-    <script>
-        // Mobile Menu Toggle
-        document.querySelector('.mobile-menu-btn').addEventListener('click', function() {
-            document.querySelector('nav ul').classList.toggle('active');
-        });
-        
-        // Header Scroll Effect
-        window.addEventListener('scroll', function() {
-            if (window.scrollY > 50) {
-                document.querySelector('header').classList.add('scrolled');
-            } else {
-                document.querySelector('header').classList.remove('scrolled');
-            }
-        });
-        
-        // Portfolio Filter
-        const filterBtns = document.querySelectorAll('.filter-btn');
-        const portfolioItems = document.querySelectorAll('.portfolio-item');
-        
-        // Слайдер для відгуків
-        const testimonialItems = document.querySelectorAll('.testimonial-item');
-        let currentTestimonial = 0;
-
-        // Функція для показу поточного відгуку
-        function showTestimonial(index) {
-            testimonialItems.forEach((item, i) => {
-                if (i === index) {
-                    item.style.display = 'block';
-                } else {
-                    item.style.display = 'none';
-                }
-            });
-        }
-
-        // Показуємо перший відгук при завантаженні
-        showTestimonial(currentTestimonial);
-
-        // Автоматична зміна відгуків кожні 5 секунд
-        setInterval(() => {
-            currentTestimonial = (currentTestimonial + 1) % testimonialItems.length;
-            showTestimonial(currentTestimonial);
-        }, 5000);
-        
-        filterBtns.forEach(btn => {
-            btn.addEventListener('click', () => {
-                // Remove active class from all buttons
-                filterBtns.forEach(btn => btn.classList.remove('active'));
-                
-                // Add active class to clicked button
-                btn.classList.add('active');
-                
-                // Get filter value
-                const filterValue = btn.getAttribute('data-filter');
-                
-                // Filter items
-                portfolioItems.forEach(item => {
-                    if (filterValue === 'all' || item.getAttribute('data-category') === filterValue) {
-                        item.style.display = 'block';
-                    } else {
-                        item.style.display = 'none';
-                    }
-                });
-            });
-        });
-    </script>
+    <script src="./main.js"></script>
+    <script src="./i18n.js"></script>
 </body>
-</html>f
+</html>
